@@ -1,20 +1,12 @@
+/* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
 }
 
-.hero-bg {
-    background-color: #2D3748;
-}
-
+/* Header & Navigation Styles */
 .nav-link.active {
     color: #EF4444;
     font-weight: 600;
-}
-
-#menu-photo-container img {
-    width: 70%; 
-    height: auto;
-    margin: 0 auto; 
 }
 
 .hamburger span {
@@ -33,6 +25,13 @@ body {
     transform: translateY(-8px) rotate(-45deg);
 }
 
+/* Menu Section Styles */
+#menu-photo-container img {
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+}
+
 .menu-filter-btn.active {
     background-color: #EF4444;
     color: #FFFFFF;
@@ -41,4 +40,58 @@ body {
 .menu-filter-btn:not(.active) {
     background-color: #FFFFFF;
     color: #4B5563;
+}
+
+/* Form Validation Styles */
+.contact-form-message, #cart-modal {
+    display: none;
+}
+
+.input-error {
+    border-color: #EF4444 !important;
+}
+
+/* Cart Modal Styles */
+#cart-modal-container {
+    max-width: 500px;
+    height: auto;
+    max-height: 80vh;
+}
+
+/* Animations */
+/* Fade-in and slide up animation for the hero section */
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.animate-fade-in-up {
+    animation: fade-in-up 1s ease-out forwards;
+}
+
+/* Subtle pulse animation for buttons */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Subtle hover effect for popular dish cards */
+.popular-dish-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.popular-dish-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
