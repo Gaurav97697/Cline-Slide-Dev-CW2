@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bays Peri Peri - Home & About</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Bays Peri Peri - Flame-Grilled Chicken in Reading</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Poppins Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="text-gray-800">
-    <!-- code -->
 
     <header id="header" class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                <img src="https://placehold.co/40x40/FF5733/FFFFFF?text=Logo" alt="Bays Peri Peri Logo" class="rounded-full">
+                <img src="image/bays peri peri.webp" alt="Bays Peri Peri Logo" height="50" width="30">
                 <span>Bays Peri Peri</span>
             </a>
             <nav class="hidden md:flex items-center space-x-8">
@@ -25,9 +27,9 @@
                 <a href="#about" class="nav-link text-gray-600 hover:text-red-500 transition duration-300">About Us</a>
                 <a href="#contact" class="nav-link text-gray-600 hover:text-red-500 transition duration-300">Contact Us</a>
             </nav>
-            <a href="#menu" class="order-btn bg-red-600 text-white font-bold py-2 px-6 rounded-full transition duration-300 shadow-lg hidden md:block">
+            <button class="order-btn bg-red-600 text-white font-bold py-2 px-6 rounded-full transition duration-300 shadow-lg hidden md:block open-cart-btn">
                 Order Now
-            </a>
+            </button>
             <button id="hamburger-button" class="md:hidden hamburger z-50 flex flex-col justify-center items-center h-8 w-8">
                 <span class="block w-6 h-0.5 bg-gray-800"></span>
                 <span class="block w-6 h-0.5 bg-gray-800 my-1.5"></span>
@@ -40,14 +42,14 @@
                 <a href="#menu" class="nav-link block text-gray-600 hover:text-red-500 transition duration-300">Menu</a>
                 <a href="#about" class="nav-link block text-gray-600 hover:text-red-500 transition duration-300">About Us</a>
                 <a href="#contact" class="nav-link block text-gray-600 hover:text-red-500 transition duration-300">Contact Us</a>
-                <a href="#menu" class="mt-4 order-btn bg-red-600 text-white font-bold py-2 px-6 rounded-full transition duration-300 shadow-lg block">Order Now</a>
+                <button class="mt-4 order-btn bg-red-600 text-white font-bold py-2 px-6 rounded-full transition duration-300 shadow-lg block open-cart-btn">Order Now</button>
             </nav>
         </div>
     </header>
 
     <main>
         <section id="home" class="hero-bg text-white min-h-[60vh] md:min-h-[80vh] flex items-center relative">
-            <div class="container mx-auto px-6 text-center z-10">
+            <div class="container mx-auto px-6 text-center z-10 animate-fade-in-up">
                 <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">Authentic Flame-Grilled Flavour in Reading</h1>
                 <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">Experience the perfect blend of spice and freshness, crafted with passion and served with a smile.</p>
                 <div class="space-x-4">
@@ -63,21 +65,45 @@
                 <h2 class="text-3xl font-bold text-center mb-2">Our Most Popular Dishes</h2>
                 <p class="text-center text-gray-600 mb-12">See what everyone's talking about! These are the go-to choices for our regulars.</p>
                 <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <div class="bg-yellow-50 rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row items-center">
+                    <div class="bg-yellow-50 rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row items-center popular-dish-card">
                         <img src="image/img8.webp" alt="Chicken Fillet Burger" class="w-full md:w-1/2 h-64 md:h-full object-cover">
                         <div class="p-6">
                             <h3 class="text-2xl font-bold mb-2">Chicken Fillet Burger</h3>
                             <p class="text-gray-600 mb-4">Our top seller! A succulent, crispy chicken fillet in a soft bun with fresh lettuce and our signature mayo.</p>
                             <span class="text-xl font-bold text-red-600">£6.49</span>
+                            <button class="add-to-cart-btn mt-4 bg-red-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-red-700 transition duration-300" data-name="Chicken Fillet Burger" data-price="6.49">Add to Cart</button>
                         </div>
                     </div>
-                    <div class="bg-yellow-50 rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row items-center">
+                    <div class="bg-yellow-50 rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row items-center popular-dish-card">
                         <img src="image/img10.webp" alt="4 Spicy Wings" class="w-full md:w-1/2 h-64 md:h-full object-cover">
                         <div class="p-6">
                             <h3 class="text-2xl font-bold mb-2">4 Spicy Wings</h3>
                             <p class="text-gray-600 mb-4">Perfectly seasoned and cooked to a crispy perfection. The ideal fiery snack or side.</p>
                             <span class="text-xl font-bold text-red-600">£4.00</span>
+                            <button class="add-to-cart-btn mt-4 bg-red-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-red-700 transition duration-300" data-name="4 Spicy Wings" data-price="4.00">Add to Cart</button>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Explore Our Menu</h2>
+                <div class="flex justify-center gap-4 mb-8">
+                    <button id="show-interactive-menu-btn" class="bg-red-600 text-white px-4 py-2 rounded-full font-semibold">Interactive Menu</button>
+                    <button id="show-menu-photo-btn" class="bg-white text-gray-700 px-4 py-2 rounded-full font-semibold border hover:bg-gray-100">Menu Photo</button>
+                </div>
+                <div id="interactive-menu-container">
+                    <div id="menu-filters" class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
+                    </div>
+                    <div id="menu-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    </div>
+                </div>
+                <div id="menu-photo-container" class="hidden text-center">
+                    <h3 class="text-2xl font-bold mb-4">Our Full Menu</h3>
+                    <div id="menu-photo-preview-container" class="max-w-4xl mx-auto">
+                        <img src="image/menu.jpg" alt="Full menu image" class="menuImg w-full h-auto object-cover">
                     </div>
                 </div>
             </div>
@@ -89,20 +115,20 @@
                     <div>
                         <h2 class="text-3xl font-bold mb-4">Our Story: Passion on a Plate</h2>
                         <p class="text-gray-600 mb-4">Since 2017, Bays Peri Peri has been serving the heart of Reading with more than just food;
-                             we serve an experience. Our journey began with a simple mission: to share our passion for authentic, 
-                             flame-grilled peri peri, using only the freshest, high-quality ingredients. We believe in bold flavours, 
-                             fresh cooking, and creating a welcoming space for our community.</p>
-                        <p class="text-gray-600 font-semibold">From our diverse menu featuring unique tastes like our Chicken Tikka 
-                             burgers to our commitment to providing delicious Halal options, every dish is a reflection of our
-                             dedication to quality and customer satisfaction.</p>
+                            we serve an experience. Our journey began with a simple mission: to share our passion for authentic,
+                            flame-grilled peri peri, using only the freshest, high-quality ingredients. We believe in bold flavours,
+                            fresh cooking, and creating a welcoming space for our community.</p>
+                        <p class="text-gray-600 font-semibold">From our diverse menu featuring unique tastes like our Chicken Tikka
+                            burgers to our commitment to providing delicious Halal options, every dish is a reflection of our
+                            dedication to quality and customer satisfaction.</p>
                         <h3 class="text-2xl font-bold mb-6 mt-12">Meet the Team</h3>
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
                             <div>
                                 <img src="image/gaurav.jpg" alt="Team Member 1" class="rounded-full w-32 h-32 mx-auto mb-4 object-cover">
                                 <h4 class="text-lg font-semibold">Gaurav Sharma</h4>
                                 <p class="text-gray-500 text-sm">Founder</p>
-                                <p class="text-gray-600 text-sm mt-2">Gaurav passion for authentic peri peri led him to open Bays Peri Peri, 
-                                     bringing unique family recipes to the community.</p>
+                                <p class="text-gray-600 text-sm mt-2">Gaurav passion for authentic peri peri led him to open Bays Peri Peri,
+                                    bringing unique family recipes to the community.</p>
                             </div>
                             <div>
                                 <img src="image/Kadiga.jpg" alt="Team Member 2" class="rounded-full w-32 h-32 mx-auto mb-4 object-cover">
@@ -114,21 +140,128 @@
                                 <img src="image/qAHIF.jpg" alt="Team Member 3" class="rounded-full w-32 h-32 mx-auto mb-4 object-cover">
                                 <h4 class="text-lg font-semibold">Washif Husan Piyal</h4>
                                 <p class="text-gray-500 text-sm">Restaurant Manager</p>
-                                <p class="text-gray-600 text-sm mt-2">Piyal ensures a smooth and welcoming experience for every customer, from the moment they walk in to the final bite.</p>
+                                <p class="text-gray-600 text-sm mt-2">Washif ensures a smooth and welcoming experience for every customer, from the moment they walk in to the final bite.</p>
                             </div>
                         </div>
                     </div>
                     <div>
                         <h3 class="text-2xl font-bold mb-6 text-center">What Our Customers Say</h3>
                         <div id="testimonials-container" class="space-y-6">
-                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="order" class="py-16 bg-red-600 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-4">Ready to Eat?</h2>
+                <p class="text-lg mb-8 max-w-2xl mx-auto">Get your favorite flame-grilled meals fresh and fast. Order directly for pickup or get it delivered straight to your door.</p>
+                <div class="flex justify-center items-center gap-4 flex-wrap">
+                    <a href="tel:01189571234" class="bg-white text-red-600 font-bold py-3 px-8 rounded-full hover:bg-yellow-300 transition duration-300 text-lg shadow-lg">Call to Order: 0118 957 1234</a>
+                    <button class="bg-gray-900 text-white font-bold py-3 px-8 rounded-full hover:bg-black transition duration-300 text-lg shadow-lg open-cart-btn animate-pulse">Order on Uber Eats</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Contact Us</h2>
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4">Get in touch with us</h3>
+                        <div class="space-y-4 text-gray-700">
+                            <p class="text-lg">We would love to hear from you! Whether you have a question, feedback, or a special request, please reach out to us using the information below or the contact form on the right.</p>
+                            <p>
+                                <strong class="block text-gray-900">Address:</strong>
+                                6 West Street, Reading, United Kingdom, RG1 1TT
+                            </p>
+                            <p>
+                                <strong class="block text-gray-900">Phone:</strong>
+                                <a href="tel:01189571234" class="text-red-600 hover:underline" aria-label="Call Bays Peri Peri at 0118 957 1234">0118 957 1234</a>
+                            </p>
+                            <p>
+                                <strong class="block text-gray-900">Email:</strong>
+                                <a href="mailto:contact@baysperiperi.co.uk" class="text-red-600 hover:underline" aria-label="Email Bays Peri Peri at contact@baysperiperi.co.uk">contact@baysperiperi.co.uk</a>
+                            </p>
+                            <div>
+                                <strong class="block text-gray-900 mb-2">Opening Hours:</strong>
+                                <ul class="space-y-1">
+                                    <li><strong>Mon - Thu:</strong> 12:00 PM - 11:00 PM</li>
+                                    <li><strong>Fri - Sat:</strong> 12:00 PM - 12:00 AM</li>
+                                    <li><strong>Sun:</strong> 12:00 PM - 10:00 PM</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4">Send us a message</h3>
+                        <form id="contact-form" novalidate>
+                            <div class="mb-4">
+                                <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                                <input type="text" id="name" name="name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm">
+                                <span id="name-error" class="text-sm text-red-500"></span>
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
+                                <input type="email" id="email" name="email" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm">
+                                <span id="email-error" class="text-sm text-red-500"></span>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                                <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"></textarea>
+                                <span id="message-error" class="text-sm text-red-500"></span>
+                            </div>
+                            <button type="submit" class="w-full bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700 transition duration-300">Submit</button>
+                        </form>
+                        <div id="contact-success-message" class="contact-form-message mt-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                            <strong class="font-bold">Success!</strong>
+                            <span class="block sm:inline">Thank you for your message!</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
     
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 z-[60] flex items-center justify-center p-4">
+        <div id="cart-modal-container" class="bg-white rounded-lg shadow-xl p-6 overflow-y-auto">
+            <div class="flex justify-between items-center pb-4 border-b">
+                <h3 class="text-2xl font-bold">Your Order</h3>
+                <button id="close-cart-btn" class="text-gray-500 hover:text-gray-800 transition duration-300 text-xl font-bold">&times;</button>
+            </div>
+            <div id="cart-items" class="py-4 space-y-4">
+                <!-- Cart items will be dynamically added here -->
+                <p class="text-gray-500 empty-cart-message">Your cart is empty.</p>
+            </div>
+            <div class="border-t pt-4 mt-4">
+                <div class="flex justify-between items-center text-xl font-bold mb-4">
+                    <span>Total:</span>
+                    <span id="cart-total">£0.00</span>
+                </div>
+                <button id="checkout-btn" class="w-full bg-red-600 text-white font-bold py-3 rounded-md hover:bg-red-700 transition duration-300" disabled>
+                    Proceed to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Bays Peri Peri. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">6 West Street, Reading, RG1 1TT</p>
+        </div>
+    </footer>
+    
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 flex items-center justify-between flex-wrap z-50">
+        <p class="text-sm mr-4 mb-2 md:mb-0">This website uses cookies to ensure you get the best experience. By clicking "Accept", you consent to our use of cookies.</p>
+        <button id="accept-cookies-btn" class="bg-red-600 text-white font-bold py-2 px-4 rounded-md hover:bg-red-700 transition duration-300">Accept</button>
+    </div>
+
+    <!-- jQuery and custom script files -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js.js"></script>
+    <script src="cw2.js"></script>
 </body>
 </html>
