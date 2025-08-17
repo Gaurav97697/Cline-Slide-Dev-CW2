@@ -88,11 +88,8 @@ $(function() {
         $cookieBanner.fadeOut(300);
     });
 
-    // Run the cookie check on page load
     checkCookie();
 
-
-    // --- Shopping Cart Logic ---
     let cart = {};
 
     const updateCartDisplay = () => {
@@ -155,6 +152,30 @@ $(function() {
         updateCartDisplay();
         $cartModal.fadeIn(300);
     });
+    // --- Event Handlers ---
+    $hamburgerBtn.on('click', function() {
+        $(this).toggleClass('active');
+        $mobileMenu.slideToggle(300);
+    });
+    
+    // Mobile menu link click
+    $('#mobile-menu a').on('click', function() {
+        $mobileMenu.slideUp(300);
+        $hamburgerBtn.removeClass('active');
+    });
+    $showInteractiveMenuBtn.on('click', function() {
+        $interactiveMenuContainer.removeClass('hidden');
+        $menuPhotoContainer.addClass('hidden');
+        $(this).removeClass('bg-white text-gray-700 border hover:bg-gray-100').addClass('bg-red-600 text-white');
+        $showMenuPhotoBtn.removeClass('bg-red-600 text-white').addClass('bg-white text-gray-700 border hover:bg-gray-100');
+    });
+
+    $showMenuPhotoBtn.on('click', function() {
+        $interactiveMenuContainer.addClass('hidden');
+        $menuPhotoContainer.removeClass('hidden');
+        $(this).removeClass('bg-white text-gray-700 border hover:bg-gray-100').addClass('bg-red-600 text-white');
+        $showInteractiveMenuBtn.removeClass('bg-red-600 text-white').addClass('bg-white text-gray-700 border hover:bg-gray-100');
+    });
     // --- Function to Display Menu Items ---
     const displayMenuItems = (filter) => {
         const filteredData = (filter === 'All') ? menuData : menuData.filter(item => item.category === filter);
@@ -173,8 +194,6 @@ $(function() {
         `).join('');
         $menuGrid.html(menuHtml);
     };
-
-    // --- Generate Testimonials and Menu Filters on load ---
     const testimonialsHtml = testimonialsData.map(testimonial => `
         <div class="bg-yellow-50 p-6 rounded-lg shadow-md">
             <p class="text-gray-600 italic">"${testimonial.quote}"</p>
@@ -191,7 +210,6 @@ $(function() {
     `).join('');
     $menuFilters.html(filterButtonsHtml);
 
-    // --- Menu Filter Button Click Handler (Event Delegation) ---
     $menuFilters.on('click', '.menu-filter-btn', function() {
         const category = $(this).data('category');
         $('.menu-filter-btn').removeClass('active bg-red-600 text-white').addClass('bg-white text-gray-700 hover:bg-red-100');
