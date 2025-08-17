@@ -1,6 +1,24 @@
 /* General Styles */
-
-
+body {
+    font-family: 'Poppins', sans-serif;
+}
+/* Header & Navigation Styles */
+.nav-link.active {
+    color: #EF4444;
+    font-weight: 600;
+}
+.hamburger span {
+    transition: all 0.3s ease-in-out;
+}
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
 /* Menu Section Styles */
 #menu-photo-container img {
     width: 70%;
@@ -26,14 +44,12 @@
 .input-error {
     border-color: #EF4444 !important;
 }
-
 /* Cart Modal Styles */
 #cart-modal-container {
     max-width: 500px;
     height: auto;
     max-height: 80vh;
 }
-
 /* Animations */
 /* Fade-in and slide up animation for the hero section */
 @keyframes fade-in-up {
