@@ -155,36 +155,6 @@ $(function() {
         updateCartDisplay();
         $cartModal.fadeIn(300);
     });
-
-
-    // --- Event Handlers ---
-    // Hamburger menu toggle
-    $hamburgerBtn.on('click', function() {
-        $(this).toggleClass('active');
-        $mobileMenu.slideToggle(300);
-    });
-    
-    // Mobile menu link click
-    $('#mobile-menu a').on('click', function() {
-        $mobileMenu.slideUp(300);
-        $hamburgerBtn.removeClass('active');
-    });
-
-    // Menu switcher buttons
-    $showInteractiveMenuBtn.on('click', function() {
-        $interactiveMenuContainer.removeClass('hidden');
-        $menuPhotoContainer.addClass('hidden');
-        $(this).removeClass('bg-white text-gray-700 border hover:bg-gray-100').addClass('bg-red-600 text-white');
-        $showMenuPhotoBtn.removeClass('bg-red-600 text-white').addClass('bg-white text-gray-700 border hover:bg-gray-100');
-    });
-
-    $showMenuPhotoBtn.on('click', function() {
-        $interactiveMenuContainer.addClass('hidden');
-        $menuPhotoContainer.removeClass('hidden');
-        $(this).removeClass('bg-white text-gray-700 border hover:bg-gray-100').addClass('bg-red-600 text-white');
-        $showInteractiveMenuBtn.removeClass('bg-red-600 text-white').addClass('bg-white text-gray-700 border hover:bg-gray-100');
-    });
-
     // --- Function to Display Menu Items ---
     const displayMenuItems = (filter) => {
         const filteredData = (filter === 'All') ? menuData : menuData.filter(item => item.category === filter);
